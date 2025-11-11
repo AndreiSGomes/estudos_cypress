@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "cypress": "^14.3.0"
+  },
+  "devDependencies": {
+    "cypress-qase-reporter": "^3.1.0"
+  }
+}
