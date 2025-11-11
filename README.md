@@ -82,8 +82,3 @@ estudos_cypress/
 Feito com dedicação por Andrei Gomes 🚀
 
 📫 linkedin.com/in/AndreiSGomes
-
-
- 
-
->>>>>>> master
