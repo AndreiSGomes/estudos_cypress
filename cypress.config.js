@@ -1,11 +1,11 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: "t2v3tw",
+  projectId: 'r4kw4w',
   e2e: {
     baseUrl: 'https://front.serverest.dev',
     setupNodeEvents(on, config) {
-      
+
     },
   },
 });
