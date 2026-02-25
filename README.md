@@ -1,79 +1,119 @@
-# 🧪 Estudos com Cypress
+# 🧪 Cypress – Testes de API | Serverest
 
-> Este repositório foi criado com o objetivo de praticar e documentar meus estudos com testes automatizados utilizando o framework **Cypress**.  
-> A aplicação testada é o front-end do [Serverest.dev](https://front.serverest.dev).
-
----
-
-## 🚀 Roadmap do Projeto
-
-- ✅ Criar repositório local e remoto `estudos_cypress`
-- ✅ Inicializar o projeto com `git init` e instalar Cypress com `npm install cypress`
-- ✅ Rodar Cypress com `npx cypress open` para gerar a estrutura inicial
-- ✅ Configurar o `cypress.config.js` com `baseUrl: 'https://front.serverest.dev'`
-- ✅ Renomear `spec.cy.js` para `tela-registrar.cy.js`
-- ✅ Criar testes de cadastro de usuário:
-  - [x] Cadastro com sucesso
-  - [x] Cadastro com e-mail duplicado
-  - [x] Cadastro sem nome
-  - [x] Cadastro sem e-mail
-  - [x] Cadastro sem senha
-  - [x] Cadastro com todos os campos vazios
-- ✅ Realizar o primeiro commit e subir para o repositório remoto
+> Este repositório foi criado com o objetivo de praticar testes automatizados de API utilizando o framework Cypress.
+> Os testes são realizados contra a API do Serverest, cobrindo fluxos completos de:
+> - Usuários
+> - Login
+> - Produtos
 
 ---
 
-## 🧩 Tecnologias Utilizadas
 
-- ✅ Cypress
-- ✅ Node.js
-- ✅ Git/GitHub
-- ✅ Markdown
+# 🚀 Roadmap Atual do Projeto
+
+## 🔹 Estrutura Inicial
+
+- ✅ Instalação e configuração do Cypress
+- ✅ Organização de specs por domínio:
+  - usuarios.api.cy.js
+  - login.api.cy.js
+  - produtos.api.cy.js
+    
+- ✅ Configuração de baseUrl
+
+
+## 🔹 Testes de Usuários
+
+- ✅ Cadastro com sucesso
+- ✅ Validação de e-mail duplicado
+- ✅ Exclusão com sucesso
+- ✅ Exclusão de usuário inexistente
+
+Validações aplicadas:
+
+- Status code
+- Mensagem da API
+- Estrutura do response body
+
+
+## 🔹 Testes de Login
+
+- ✅ Login com sucesso
+- ✅ Login com credenciais inválidas
+- ✅ Validação de retorno do token (authorization)
+
+
+## 🔹 Testes de Produtos
+
+Cadastro
+
+- ✅ Cadastro com sucesso (usuário admin)
+- ✅ Produto com nome duplicado
+- ✅ Cadastro sem token
+- ✅ Cadastro com usuário comum (validação de permissão)
+
+Exclusão
+
+- ✅ Exclusão com sucesso
+- ✅ Exclusão de produto inexistente
+- ✅ Exclusão sem token
+- ✅ Exclusão com usuário não administrador
+
 
 ---
 
-## 🛠 Como rodar localmente
 
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/estudos_cypress.git
+# 🧠 Conceitos Técnicos Aplicados
 
-# Acesse a pasta do projeto
-cd estudos_cypress
+- Uso de cy.request() via comandos customizados
 
-# Instale as dependências
-npm install
+- Encadeamento assíncrono com .then()
 
-# Rode o Cypress
-npx cypress open
-````
+- Captura dinâmica de IDs retornados pela API
 
----
+- Geração dinâmica de dados com Date.now()
 
-## 📁 Estrutura do projeto
+- Testes positivos e negativos
+
+- Validação de regras de autorização (admin vs usuário comum)
+
+- Separação de responsabilidades por domínio
+
+
+# 🛠 Tecnologias Utilizadas
+
+- Cypress
+- Node.js
+- Git
+- GitHub
+
+
+
+# 📁 Estrutura Atual
 
 ```
-estudos_cypress/
-├── cypress/
-│   ├── e2e/
-│   │   └── tela-registrar.cy.js
-│   └── support/
-├── cypress.config.js
-├── package.json
-└── README.md
+cypress/
+├── e2e/
+
+│   ├── usuarios.api.cy.js
+│   ├── login.api.cy.js
+│   └── produtos.api.cy.js
+├── support/
+│   ├── commandsLogin.js
+│   ├── commandsUsuario.js
+│   └── commandsProduto.js
 ```
 
----
 
-## 📌 Próximos Passos
+# 🔜 Próximas Evoluções Técnicas
 
-- ⬜ Criar comandos customizados para preencher formulários (cy.preencherCadastro())
-- ⬜ Separar dados de testes com arquivos .json (fixtures)
-- ⬜ Criar testes para login de usuário=
-- ⬜ Implementar geração automática de dados (nome, email etc.)
-- ⬜ Configurar testes em múltiplos navegadores
-- ⬜ Automatizar execução via CLI
-- ⬜ Criar integração com GitHub Actions para CI
+- ⬜ Refatorar encadeamentos usando beforeEach
+- ⬜ Armazenar token utilizando Cypress.env()
+- ⬜ Implementar cleanup automático com afterEach
+- ⬜ Trabalhar com cy.intercept() para testes híbridos (UI + API)
+- ⬜ Implementar ambientes dinâmicos (dev/hml)
+- ⬜ Estruturar execução para CI/CD
+
 
 ---
 
